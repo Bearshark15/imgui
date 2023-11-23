@@ -1,6 +1,8 @@
 project "imgui"
     kind "StaticLib"
     language "C++"
+    cppdialect "C++20"
+    staticruntime "on"
 
     targetdir ("build/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin/" .. outputdir .. "/%{prj.name}")
@@ -30,17 +32,11 @@ project "imgui"
 
 	filter "system:windows"
 		systemversion "latest"
-		cppdialect "C++20"
-        staticruntime "On"
 
     filter "configurations:Debug"
-        buildoptions "/MDd"
-        symbols "On"
+        buildoptions "/MTd"
+        symbols "on"
 
     filter "configurations:Release"
-        buildoptions "/MD"
-        optimize "On"
-    
-    filter "configurations:Dist"
-        buildoptions "/MD"
-        optimize "On"
+        buildoptions "/MT"
+        optimize "on"
