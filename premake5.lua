@@ -26,7 +26,7 @@ project "imgui"
 	}
 
     includedirs {
-        "C:/dev/gameengine/Starfish/starfish/vendor/imgui",
+        "C:/dev/gameengine/Starfish/StarfishEngine/vendor/imgui",
         "%{prj.name}/backends",
     }
 
